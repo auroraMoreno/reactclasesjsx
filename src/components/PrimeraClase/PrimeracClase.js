@@ -13,7 +13,7 @@ class PrimeraClase extends Component{
     render(){
         return(
             <React.Fragment>
-                <h1 className="rojo">Primer componente class</h1>
+                <h1 className="rojo">Primer componente class con git</h1>
             </React.Fragment>
         );
     }
