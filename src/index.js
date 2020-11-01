@@ -7,6 +7,8 @@ import PrimeraClase from './components/PrimeraClase/PrimeracClase';
 import Deportes from './components/Deportes/Deportes';
 import Numeros from './components/Numeros/Numeros'
 import Comics from './components/Comics/Comics';
+import EjemploSimple from './components/Formularios/EjemploSimple';
+import Conjeturas from './components/Conjeturas/Conjeturas';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -14,8 +16,11 @@ ReactDOM.render(
     <PrimeraClase titulo="Componente 2" inicio="99"/>
 <Deportes/>
 <Numeros/>
+ <Comics/>
+  <App/> 
+   <EjemploSimple/>
 */}
-  <Comics/>
+ <Conjeturas/>
   </React.StrictMode>, 
   document.getElementById('root')
 );

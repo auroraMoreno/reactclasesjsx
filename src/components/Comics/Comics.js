@@ -51,9 +51,66 @@ seleccionarComic = comic =>{
     });
 }
 
+crearComic = ()=>{
+  var titulo = document.getElementById("cajaTitulo").value;
+  var imagen = document.getElementById("cajaImagen").value;
+  var descripcion =document.getElementById("cajaDescripcion").value;
+  var comic = {
+    titulo: titulo,
+    imagen: imagen,
+    descripcion: descripcion
+  }
+  var comics = this.state.comics;
+  comics.push(comic);
+  this.setState({
+    comics:comics
+  });
+}
+
+eliminarComic = (index)=>{
+  //queremos eliminar un comic entre muchos de un array
+  //array.splice(indice, elementos a eliminar)
+  //necesitamos el indice
+
+  //recuperamos el array
+  var comics = this.state.comics;
+  comics.splice(index,1);
+  this.setState({
+    comics: comics
+  });
+}
+
+updateComic = (index) =>{
+var titulo = document.getElementById("cajaTitulo").value;
+var imagen = document.getElementById("cajaImagen").value;
+var descripcion = document.getElementById("cajaDescripcion").value;
+
+var comics = this.state.comics;
+var comic = comics[index];
+comic.titulo = titulo;
+comic.imagen = imagen;
+comic.descripcion=descripcion;
+
+this.setState({
+  comics: comics
+});
+}
+
 render(){
     return(
         <div>
+          <div>
+            <label>Tituto</label>
+            <input type="text" id="cajaTitulo"/>
+            <br/>
+            <label>Imagen</label>
+            <input type="text" id="cajaImagen"/>
+            <br/>
+            <label>Descripcion</label>
+            <input type="text" id="cajaDescripcion"/>
+            <br/>
+            <button onClick={this.crearComic}>Nuevo Comic</button>
+          </div>
              {/* Condicion && Html */}
              {
                 this.state.favorito &&  //si existe fav que lo ponga
@@ -64,10 +121,18 @@ render(){
             }
             {this.state.comics.map((comic,index)=>{
                 return(
+                  <React.Fragment  key={index}>
                     <Comic 
                     comic={comic}
-                    key={index}
-                    seleccionarComic={this.seleccionarComic}/>
+                    seleccionarComic={this.seleccionarComic}
+                    index = {index}
+                    eliminarComic={this.eliminarComic}/>
+                    <button 
+                    onClick={()=>{
+                      this.updateComic(index);
+                    }}>Modificar comic</button>
+                  </React.Fragment>
+                 
                 );
             })
             }

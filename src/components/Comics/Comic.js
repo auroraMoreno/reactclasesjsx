@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 
 class Comic extends Component{
 
+
     render(){
         return(
             <div>
@@ -11,6 +12,9 @@ class Comic extends Component{
                 <button onClick={()=>{
                     this.props.seleccionarComic(this.props.comic);
                 }}>Seleccionar comics</button>
+                <button onClick={() =>{
+                    this.props.eliminarComic(this.props.index);
+                }}>Eliminar Comic</button>
             </div>
         );
     }
