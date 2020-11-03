@@ -9,6 +9,10 @@ import Numeros from './components/Numeros/Numeros'
 import Comics from './components/Comics/Comics';
 import EjemploSimple from './components/Formularios/EjemploSimple';
 import Conjeturas from './components/Conjeturas/Conjeturas';
+import SeleccionSimple from './components/Formularios/SeleccionSimple';
+import SeleccionMultiple from './components/Formularios/SeleccionMultiple';
+import ComicMultiple from './components/Formularios/ComicMultiple';
+import SeleccionComponent from './components/Formularios/SeleccionComponent';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -19,8 +23,13 @@ ReactDOM.render(
  <Comics/>
   <App/> 
    <EjemploSimple/>
+    <Conjeturas/>
+    <SeleccionSimple/>
+      <SeleccionMultiple/>
+        <ComicMultiple/>
+         <SeleccionSimple/>
 */}
- <Conjeturas/>
+  <SeleccionComponent/>
   </React.StrictMode>, 
   document.getElementById('root')
 );
